@@ -217,4 +217,19 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  themeToggle.addEventListener('click', function() {
+    body.classList.toggle('dark-mode');
+    const icon = themeToggle.querySelector('i');
+    if (body.classList.contains('dark-mode')) {
+      icon.classList.remove('bi-moon');
+      icon.classList.add('bi-sun');
+    } else {
+      icon.classList.remove('bi-sun');
+      icon.classList.add('bi-moon');
+    }
+  });
+
 })();
